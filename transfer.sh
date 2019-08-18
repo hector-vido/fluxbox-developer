@@ -31,10 +31,10 @@ SDA2="$(blkid /dev/sda2 | sed -En 's|.*"(\w*-\w*-\w*-\w*-\w*)".*|\1|p')"
 SDB1="$(blkid /dev/sdb1 | sed -En 's|.*"(\w*-\w*-\w*-\w*-\w*)".*|\1|p')"
 SDB2="$(blkid /dev/sdb2 | sed -En 's|.*"(\w*-\w*-\w*-\w*-\w*)".*|\1|p')"
 
-sed -Ei "s/$SDA1/$SDB1" /mnt/etc/fstab
-sed -Ei "s/$SDA2/$SDB2" /mnt/etc/fstab
+sed -Ei "s/$SDA1/$SDB1/" /mnt/etc/fstab
+sed -Ei "s/$SDA2/$SDB2/" /mnt/etc/fstab
 
-sed -Ei "s/$SDA1/$SDB1" /mnt/etc/initramfs-tools/conf.d/resume
+sed -Ei "s/$SDA1/$SDB1/" /mnt/etc/initramfs-tools/conf.d/resume
 
 mkdir -p /mnt/{dev,proc,sys}
 mount --bind /dev /mnt/dev
