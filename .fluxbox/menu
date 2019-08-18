@@ -1,0 +1,20 @@
+[begin] (Fluxbox)
+   [submenu] (Aplicativos) {}
+      [exec] (Firefox) {firefox}
+      [exec] (Terminal) {sakura}
+      [exec] (Editor) {geany}
+      [exec] (Arquivos) {thunar}
+   [end]
+   [submenu] (Teclado) {}
+      [exec] (BR) {setxkbmap -model abnt2 -layout br}
+      [exec] (EUA) {setxkbmap -layout us -variant intl}
+   [end]
+   [submenu] (Resolução) {}
+      [exec] (1440x900) {xrandr --output Virtual1 --mode 1440x900}
+      [exec] (1360x768) {xrandr --output Virtual1 --mode 1360x768}
+      [exec] (1024x768) {xrandr --output Virtual1 --mode 1024x768}
+   [end]
+   [restart] (Recarregar)
+   [exec] (Reiniciar) {/sbin/reboot}
+   [exec] (Desligar) {/sbin/poweroff}
+[end]
