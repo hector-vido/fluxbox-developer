@@ -36,20 +36,22 @@ sed -Ei "s/$SDA2/$SDB2/" /mnt/etc/fstab
 
 sed -Ei "s/$SDA1/$SDB1/" /mnt/etc/initramfs-tools/conf.d/resume
 
+sync
+
 mkdir -p /mnt/{dev,proc,sys}
 mount --bind /dev /mnt/dev
 mount --bind /proc /mnt/proc
 mount --bind /sys /mnt/sys
 
-chroot /mnt
+cat <<EOF | chroot /mnt /bin/bash
+grub-install /dev/sdb
+update-grub2
+update-initramfs -u
+EOF
 
 cat <<EOF
-Os arquivos foram copiados. Os próximos passos são os seguintes:
-1. chroot /mnt
-2. blkid /dev/<dispositivos> ex: /dev/sdb1 /dev/sdb2
-3. vim /etc/fstab
-4. vim /etc/initramfs-tools/conf.d/resume - alterar UUID
-5. vim /etc/initramfs-tools/initramfs.conf - MODULES=dep, COMPRESS=xz
-6. grub-install /dev/<dispositivo> ex: /dev/sdb
-7. update-initramfs -u
+
+****************************
+* Transferência finalizada *
+****************************
 EOF
