@@ -6,8 +6,8 @@
       [exec] (Arquivos) {thunar}
    [end]
    [submenu] (Teclado) {}
-      [exec] (BR) {setxkbmap -model abnt2 -layout br && sed -Ei 's/setxkbmap.*/setxkbmap -model abnt2 -layout br/g' .fluxbox/startup}
-      [exec] (EUA) {setxkbmap -layout us -variant intl && sed -Ei 's/setxkbmap.*/setxkbmap -layout us -variant intl/g' .fluxbox/startup}
+      [exec] (BR) {setxkbmap -model abnt2 -layout br && sed -Ei 's/setxkbmap.*/setxkbmap -model abnt2 -layout br/g' ~/.fluxbox/startup}
+      [exec] (EUA) {setxkbmap -layout us -variant intl && sed -Ei 's/setxkbmap.*/setxkbmap -layout us -variant intl/g' ~/.fluxbox/startup}
    [end]
    [submenu] (Resolução) {}
       [exec] (1440x900) {xrandr --output Virtual1 --mode 1440x900}
