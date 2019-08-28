@@ -20,17 +20,17 @@ table Config
   SnapWidth: 10
   SnapHeight: 10
   SnapOrigin: BottomRight
-  SnapShadow: false
+  SnapShadow: true
   SnapShadowTrans: 200
   CaptionOnHover: false
   CaptionPlacement: bottom
-  FillStyle: None
+  FillStyle: FillInvert
   Background.Delay: 0
   Background.Source: None
   Background.File: None 
   Background.Mode: Center 
   Background.Color: #C2CCFF
-  CursorOver: arrow
+  CursorOver: hand1
 end
 
 table Actions
@@ -41,4 +41,3 @@ table Actions
   Execute[0]: left doubleClk
   Execute[1]: right doubleClk
 end
-
