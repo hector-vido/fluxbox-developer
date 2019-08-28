@@ -21,7 +21,7 @@ A intenção é que apenas o mínimo possível de softwares estejam instalados. 
 O comando para instalar os pacotes necessários é o seguinte:
 
 ```bash
-apt-get install -y xinit fluxbox git vim sakura idesk thunar firefox-esr geany geany-plugins
+apt-get install -y xinit fluxbox git vim sakura idesk thunar firefox-esr geany geany-plugins x11-xserver-utils php-cli
 ```
 
 ## Instalação
