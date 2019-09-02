@@ -17,6 +17,10 @@ if [ ! -b $1 ]; then
 	exit 2
 fi
 
+sed -i 's/MODULES=.*/MODULES=dep/' /etc/initramfs-tools/initramfs.conf
+sed -i 's/COMPRESS=.*/COMPRESS=xz/' /etc/initramfs-tools/initramfs.conf
+update-initramfs -u
+
 mount $1 /mnt
 
 cd /
@@ -37,7 +41,7 @@ Os arquivos foram copiados. Os próximos passos são os seguintes:
 2. blkid /dev/<dispositivos> ex: /dev/sdb1 /dev/sdb2
 3. vim /etc/fstab
 4. vim /etc/initramfs-tools/conf.d/resume - alterar UUID
-5. vim /etc/initramfs-tools/initramfs.conf - MODULES=dep, COMPRESS=xz
-6. grub-install /dev/<dispositivo> ex: /dev/sdb
+5. grub-install /dev/<dispositivo> ex: /dev/sdb
+6. update-grub
 7. update-initramfs -u
 EOF
