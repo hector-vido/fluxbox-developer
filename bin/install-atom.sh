@@ -33,7 +33,7 @@ end
 EOF
 
 sudo pkill idesk
-(setsid idesk > /dev/null 2>&1 &)
+setsid idesk > /dev/null 2>&1 &
 echo 'Reiniciando ícones...'
 sleep 2
 exit 0
