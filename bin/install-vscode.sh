@@ -21,4 +21,22 @@ sudo apt-get install -y code
 sudo rm /tmp/packages.microsoft.gpg
 
 sed -i 's,Instalar VSCode,VSCode,' /home/developer/.fluxbox/menu
-sed -i 's,sakura .*,code},' /home/developer/.fluxbox/menu 
+sed -i 's,sakura .*-vscode.*,code},' /home/developer/.fluxbox/menu 
+
+cat > /home/developer/.idesktop/vscode.lnk <<EOF
+table Icon
+  Caption: VSCode
+  ToolTip.Caption: VSCode Editor
+  Icon: /usr/share/code/resources/app/resources/linux/code.png
+  Width: 48
+  Height: 48
+  X: 15
+  Y: 425
+  Command[0]: code
+end
+EOF
+
+sudo pkill idesk &
+sleep 1
+DISPLAY=:0 idesk &
+exit 0

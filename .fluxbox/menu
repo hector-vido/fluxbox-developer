@@ -4,6 +4,9 @@
       [exec] (Terminal) {sakura}
       [exec] (Editor) {geany}
       [exec] (Arquivos) {thunar}
+      [exec] (Instalar Atom) {sakura --execute 'bash /usr/local/bin/install-atom.sh'}
+      [exec] (Instalar VSCode) {sakura --execute 'bash /usr/local/bin/install-vscode.sh'}
+      [exec] (Instalar Sublime) {sakura --execute 'bash /usr/local/bin/install-sublime.sh'}
    [end]
    [submenu] (Teclado) {}
       [exec] (BR) {setxkbmap -model abnt2 -layout br && sed -Ei 's/setxkbmap.*/setxkbmap -model abnt2 -layout br/g' ~/.fluxbox/startup}
