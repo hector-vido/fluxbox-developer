@@ -22,6 +22,6 @@
       [exec] (800x600) {xrandr --output Virtual1 --mode 800x600}
    [end]
    [restart] (Recarregar)
-   [exec] (Reiniciar) {/sbin/reboot}
-   [exec] (Desligar) {/sbin/poweroff}
+   [exec] (Reiniciar) {sudo /sbin/reboot}
+   [exec] (Desligar) {sudo /sbin/poweroff}
 [end]
