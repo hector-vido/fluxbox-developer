@@ -4,10 +4,10 @@ if [ -z "$1" ]; then
         cat <<EOF
 Exemplo:
 
-bash transfer.sh /dev/sdb2
+bash transfer.sh /dev/sdb
 
-Especifique a partição para onde os dados serão copiados.
-Não é preciso montar a partição, apenas formatá-la.
+Especifique o dispositivo para qual os dados serão copiados.
+O dispositivo será formatado, montado e preparado automaticamente.
 EOF
         exit 1
 fi
@@ -30,7 +30,7 @@ sed -i 's/MODULES=.*/MODULES=dep/' /etc/initramfs-tools/initramfs.conf
 sed -i 's/COMPRESS=.*/COMPRESS=xz/' /etc/initramfs-tools/initramfs.conf
 update-initramfs -u
 
-mount $1 /mnt
+mount "${1}1" /mnt
 
 cd /
 for X in $(ls -1 /); do
