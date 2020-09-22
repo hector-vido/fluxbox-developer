@@ -30,6 +30,7 @@ sed -i 's/MODULES=.*/MODULES=dep/' /etc/initramfs-tools/initramfs.conf
 sed -i 's/COMPRESS=.*/COMPRESS=xz/' /etc/initramfs-tools/initramfs.conf
 update-initramfs -u
 
+mkdir -p /mnt
 mount "${1}1" /mnt
 
 cd /
